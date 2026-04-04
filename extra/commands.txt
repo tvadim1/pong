@@ -1,0 +1,12 @@
+clang-format -i src/*.c
+clang-format -n src/*.c
+cppcheck --enable=all --suppress=missingIncludeSystem src/*.c
+
+gcc -Wall -Wextra -Werror -std=c11 src/pong.c
+gcc -Wall -Wextra -Werror -std=c11 src/pong_interactive.c -lncurses
+
+./a.out
+
+
+
+запуск src/pong.c только в linux, т.к. /r/n не обрабатывается, а обрабатывается только /n
